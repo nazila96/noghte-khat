@@ -1,0 +1,20 @@
+.cell {
+  display: grid;
+  grid-template-columns: 8px 3fr;
+  grid-template-rows: 8px 3fr;
+  gap: 0;
+}
+.top-border {
+  background-color: rgb(184, 236, 211);
+  cursor: pointer;
+}
+.left-border {
+  background-color: rgb(184, 236, 211);
+  cursor: pointer;
+}
+.dot {
+  background-color: rgb(65, 65, 65);
+}
+.middle {
+  background-color: rgb(255, 255, 255);
+}

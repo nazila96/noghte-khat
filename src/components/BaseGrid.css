@@ -1,0 +1,60 @@
+:root {
+  --grid-cols: 1;
+  --grid-rows: 1;
+}
+table {
+  border-collapse: collapse;
+  width: 500px;
+  height: 500px;
+}
+/* .grid {
+  display: grid;
+  grid-gap: 0em;
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  margin-top: 20px;
+}
+
+.grid-item {
+  padding: 1em;
+  border: 1.5px solid #ddd;
+  text-align: center;
+} */
+.parentDiv {
+  position: relative;
+}
+/* .test{
+  background-color: red;
+  padding: 20px;
+} */
+.right-clicked {
+  border-right-color: red !important;
+}
+.left-clicked {
+  border-left-color: red !important;
+}
+.top-clicked {
+  border-top-color: red !important;
+}
+.bottom-clicked {
+  border-bottom-color: red !important;
+}
+.mycell {
+  padding: 2em;
+  margin: 0;
+  border: 0.5px solid;
+}
+.baseGrid tr td {
+  padding: 0;
+  margin: 0;
+}
+.baseGrid {
+  width: 70vw;
+  height: 70vh;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), 100px);
+  grid-template-rows: repeat(var(--grid-rows), 100px);
+  gap: 0;
+}
