@@ -1,20 +1,74 @@
+
+
 .cell {
   display: grid;
   grid-template-columns: 8px 3fr;
   grid-template-rows: 8px 3fr;
   gap: 0;
+  /*  cbackdrop-filter: blur(64px) hue-rotate(120deg); */
 }
-.top-border {
-  background-color: rgb(184, 236, 211);
+.top-border, .left-border {
+  background-color: rgb(255, 255, 255);
   cursor: pointer;
 }
-.left-border {
-  background-color: rgb(184, 236, 211);
-  cursor: pointer;
+.top-border:hover, .left-border:hover {
+  background-color: rgb(224, 224, 224);
+
 }
+
 .dot {
-  background-color: rgb(65, 65, 65);
+  background-color: rgb(0, 0, 0)
+  /* border-radius: 50%; */
 }
 .middle {
-  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  background-color: rgb(44 89 165 / 23%);
+  background-blend-mode: luminosity;
+  box-sizing: border-box;
+  display: flex ;
+}
+.middle > span{
+  margin:auto;
+}
+.middle.animated {
+  animation: background-animation 15s infinite;
+}
+
+@keyframes background-animation {
+  0% {
+    background-color: rgba(0, 255, 255, 0.301);
+  }
+  25% {
+    background-color: rgba(81, 255, 0, 0.144);
+  }
+   50% {
+    background-color: rgba(0, 195, 255, 0.144);
+  }
+  75% {
+    background-color: rgba(202, 26, 26, 0.144);
+  }
+  100% {
+    background-color: rgba(0, 4, 255, 0.219);
+  }
+}
+
+
+
+
+.onePlayer{
+/* background-color: rgb(245, 212, 243); */
+background-color: rgb(252, 228, 250);   
+}
+.twoPlayer{
+
+  background-color: rgb(255, 232, 197);
+  /* background-color: rgb(250, 176, 66); */
+  /* background-color: rgb(144, 212, 233); */
+ /* background-color: rgb(164, 140, 171);    */
+
+
+}
+.hiddenCell{
+  backdrop-filter: blur(0px) hue-rotate(0deg) !important;
+  visibility: hidden;
 }

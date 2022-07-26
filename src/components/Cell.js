@@ -54,7 +54,7 @@ const Cell = ({
         className="top-border"
         style={{
           backgroundColor:
-            cellInfo.top === 1 ? "red" : cellInfo.top === 2 ? "blue" : "",
+            cellInfo.top === 1 ? "rgb(164, 140, 171)" : cellInfo.top === 2 ? "rgb(250, 176, 66)" : "",
           visibility: ignoreTop ? "hidden" : "",
         }}
         onClick={(e) => topBorderClicked(e)}
@@ -63,16 +63,16 @@ const Cell = ({
         className="left-border"
         style={{
           backgroundColor:
-            cellInfo.left === 1 ? "red" : cellInfo.left === 2 ? "blue" : "",
+            cellInfo.left === 1 ? "rgb(164, 140, 171)" : cellInfo.left === 2 ? "rgb(250, 176, 66)" : "",
           visibility: ignoreLeft ? "hidden" : "",
         }}
         onClick={(e) => leftBorderClicked(e)}
       ></div>
-      <div
-        className="middle"
-        style={{ visibility: ignoreTop || ignoreLeft ? "hidden" : "" }}
-      >
-        {cellInfo.cell}
+      {/* <div className={`${cellInfo.cell===1 ? "onePlayer" : cellInfo.cell===2 ? "twoPlayer" : "middle animated"} ${ignoreTop || ignoreLeft ? "hiddenCell" : "middle animated"}`}> */}
+      <div className={`${ignoreTop || ignoreLeft ? "hiddenCell" : "middle animated"}`}>
+
+     {cellInfo.cell===1 && <span> {cellInfo.cell} </span>}
+     {cellInfo.cell===2 && <span> {cellInfo.cell} </span>}
       </div>
     </div>
   );

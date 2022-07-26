@@ -5,10 +5,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
+  background-image: url(./assest/photos/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-weight: bold;
+  min-width: 100vw;
+  min-height: calc(100vw-100px);
+  overflow-x: hidden;
+
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 

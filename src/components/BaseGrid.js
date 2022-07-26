@@ -2,6 +2,7 @@ import React from "react";
 import "../components/BaseGrid.css";
 import { useRef, useEffect, useState } from "react";
 import Cell from "../components/Cell";
+import congrats from '../assest/photos/congrats.gif';
 
 class CellInfo {
   id = 0;
@@ -17,8 +18,8 @@ class CellInfo {
   }
 }
 
-const MAP_COLS = 8;
-const MAP_ROWS = 7;
+const MAP_COLS =8;
+const MAP_ROWS = 8;
 
 document.documentElement.style.setProperty("--grid-cols", MAP_COLS);
 document.documentElement.style.setProperty("--grid-rows", MAP_ROWS);
@@ -115,22 +116,26 @@ const BaseGrid = () => {
 
   return (
     <>
-      <label>turn : {turn}</label>
-      {Boolean(winner) && <label>winner : {winner}</label>}
-      
-      <div className="baseGrid">
-        {rows.map((val, i) => (
-          <Cell
-            key={i}
-            cellInfo={val}
-            onTopBorderClick={topBorderClickHandler}
-            onLeftBorderClick={leftBorderClickHandler}
-            ignoreTop={(i + 1) % MAP_COLS === 0}
-            ignoreLeft={i >= rows.length - MAP_COLS}
-          />
-        ))}
+      <div className="container">
+        <div className="info">
+          <label className="header-label">game turn</label>
+          <label>player{turn}</label>
+          {/* {Boolean(winner) && <label>winner : {winner}</label>} */}
+          {Boolean(winner) && <div><label>winner is: player{winner}</label><img src={congrats} alt="congrats" /></div>}
+        </div>
+        <div className="baseGrid">
+          {rows.map((val, i) => (
+            <Cell
+              key={i}
+              cellInfo={val}
+              onTopBorderClick={topBorderClickHandler}
+              onLeftBorderClick={leftBorderClickHandler}
+              ignoreTop={(i + 1) % MAP_COLS === 0}
+              ignoreLeft={i >= rows.length - MAP_COLS}
+            />
+          ))}
+        </div>
       </div>
-
     </>
   );
 };
